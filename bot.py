@@ -5,13 +5,15 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
 import time
-import json
 import os
 import threading
-import random
+
+print("Bot loading token from file TOKEN.txt")
 
 TOKEN = open("TOKEN.txt", "r")
 TOKEN = TOKEN.readline()
+
+print("Bot loading...")
 
 bot = commands.Bot(command_prefix='p!')#sets the prefix for the bot.
 client = bot
@@ -19,5 +21,6 @@ bot.remove_command('help')
 @bot.event
 async def on_ready():
 	await bot.change_presence(game=discord.Game(name="p!help"), status=discord.Status("online"), afk=False)
-
+	print("Bot is running & ready!")
+	
 bot.run(TOKEN)
