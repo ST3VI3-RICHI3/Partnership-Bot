@@ -10,8 +10,8 @@ import threading
 
 print("Bot loading token from file TOKEN.txt")
 
-TOKEN = open("TOKEN.txt", "r")
-TOKEN = TOKEN.readline()
+Reader = open("TOKEN.txt", "r")
+TOKEN = str(Reader.readline())
 
 print("Bot loading...")
 
