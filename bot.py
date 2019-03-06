@@ -42,7 +42,7 @@ async def restart(ctx):
 async def update(ctx):
 	await bot.change_presence(game=discord.Game(name="Updating..."), status=discord.Status("dnd"), afk=False)
 	print("Downloading update from git...")
-	os.system("git pull")
+	os.system("cd C:/Users/%username%/Documents/GitHub/Partnership-Bot/ | git pull | echo.")
 	os.system("start bot.py")
 	exit(0)
 
