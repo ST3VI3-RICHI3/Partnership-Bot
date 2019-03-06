@@ -15,7 +15,6 @@ TOKEN = open(str("TOKEN"), "r")
 print("Bot loading token from file TOKEN [50%]", end = "\r")
 TOKEN = str(TOKEN.readline())
 print("Bot loading token from file TOKEN [100%]", end = "\n")
-print("Done!")
 
 print("Bot loading  [0%]", end = "\r")
 
@@ -26,7 +25,7 @@ bot.remove_command('help')
 async def on_ready():
 	await bot.change_presence(game=discord.Game(name="p!help"), status=discord.Status("online"), afk=False)
 	print("Bot loading [100%]")
-	print("Done! Bot is running & ready!")
+	print("Bot running.")
 
 @bot.command(pass_context = True)
 async def help(ctx):
