@@ -1,5 +1,6 @@
 #Partnership-Bot by ST3VI3 RICHI3#5015
 
+from __future__ import print_function
 import discord
 from discord.ext import commands
 from discord.ext.commands import Bot
@@ -7,13 +8,16 @@ import asyncio
 import time
 import os
 
-print("Bot loading token from file TOKEN")
+
+print("Bot loading token from file TOKEN [0%]", end = "\r")
 
 TOKEN = open(str("TOKEN"), "r")
+print("Bot loading token from file TOKEN [50%]", end = "\r")
 TOKEN = str(TOKEN.readline())
-
+print("Bot loading token from file TOKEN [100%]", end = "\n")
 print("Done!")
-print("Bot loading...")
+
+print("Bot loading  [0%]", end = "\r")
 
 bot = commands.Bot(command_prefix='p!')#sets the prefix for the bot.
 client = bot
@@ -21,6 +25,7 @@ bot.remove_command('help')
 @bot.event
 async def on_ready():
 	await bot.change_presence(game=discord.Game(name="p!help"), status=discord.Status("online"), afk=False)
+	print("Bot loading [100%]")
 	print("Done! Bot is running & ready!")
 
 @bot.command(pass_context = True)
