@@ -6,7 +6,6 @@ from discord.ext.commands import Bot
 import asyncio
 import time
 import os
-import threading
 
 print("Bot loading token from file TOKEN")
 
